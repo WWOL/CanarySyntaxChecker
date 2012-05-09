@@ -1,0 +1,6 @@
+CanarySyntaxChecker
+
+Check the syntax of your CanaryMod files.
+Shows a GUI to enter data and then reads info and displays it nicely.
+It shows a Validity as a quick indication of the correctness of the files.
+If any of the data displayed is wrong then your syntax is wrong.
