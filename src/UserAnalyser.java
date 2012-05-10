@@ -4,11 +4,11 @@
 
 public class UserAnalyser extends Analyser{
 	DataGroup currDataGroup = null;
-	
+
 	public UserAnalyser(String paramText){
 		setText(paramText);
 	}
-	
+
 	public void startAnalysing() {
 		String[] stringArray = getText().split("\n");
 		for (String line : stringArray){
@@ -47,35 +47,35 @@ public class UserAnalyser extends Analyser{
 		} else {
 			toRet[0] = paramStringArray[0];
 		}
-		
+
 		if (paramStringArray.length < 2) {
 			toRet[1] = "No Group!";
 			currDataGroup.setValidity(Validity.ERROR);
 		} else {
 			toRet[1] = paramStringArray[1];
 		}
-		
+
 		if (paramStringArray.length < 3) {
 			toRet[2] = "No Admin Flag!";
 			currDataGroup.setValidity(Validity.OK);
 		} else {
 			toRet[2] = paramStringArray[2];
 		}
-		
+
 		if (paramStringArray.length < 4) {
 			toRet[3] = "No Prefix!";
 			currDataGroup.setValidity(Validity.OK);
 		} else {
 			toRet[3] = paramStringArray[3];
 		}
-		
+
 		if (paramStringArray.length < 5) {
 			toRet[4] = "No Commands!!";
 			currDataGroup.setValidity(Validity.OK);
 		} else {
 			toRet[4] = paramStringArray[4];
 		}
-		
+
 		if (paramStringArray.length < 6) {
 			toRet[5] = "No IP!";
 			currDataGroup.setValidity(Validity.OK);

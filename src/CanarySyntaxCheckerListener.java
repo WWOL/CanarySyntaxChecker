@@ -29,12 +29,21 @@ public class CanarySyntaxCheckerListener implements ActionListener{
 
 	public void actionPerformed(ActionEvent event) {
 		if (event.getSource().equals(instance.menuItem_Add)){
-			currText = JOptionPane.showInputDialog(null, "Enter text:");
-			instance.textArea.append(currText + "\n");
+			if (instance.textArea.isEditable()){
+				currText = JOptionPane.showInputDialog(null, "Enter text:");
+				instance.textArea.append(currText + "\n");
+			} else {
+				JOptionPane.showMessageDialog(null, "You can't add a line to read results! Click Text - Clear Text to start adding text again.");
+			}
+
 		} else if (event.getSource().equals(instance.menuItem_Clear)){
 			instance.textArea.setText("");
 			instance.textArea.setEditable(true);
 		} else if (event.getSource().equals(instance.menuItem_Groups)){
+			if (!instance.textArea.isEditable()){
+				JOptionPane.showMessageDialog(null, "You may not read the results of a read action! Click Text - Clear Text to start adding text again.");
+				return;
+			}
 			if (instance.textArea.getText().trim().equalsIgnoreCase("")){
 				instance.textArea.setText("Please enter data!");
 				return;
@@ -60,6 +69,10 @@ public class CanarySyntaxCheckerListener implements ActionListener{
 			}// end for
 			instance.textArea.setEditable(false);
 		} else if (event.getSource().equals(instance.menuItem_Users)){
+			if (!instance.textArea.isEditable()){
+				JOptionPane.showMessageDialog(null, "You may not read the results of a read action! Click Text - Clear Text to start adding text again.");
+				return;
+			}
 			if (instance.textArea.getText().trim().equalsIgnoreCase("")){
 				instance.textArea.setText("Please enter data!");
 				return;
@@ -90,7 +103,7 @@ public class CanarySyntaxCheckerListener implements ActionListener{
 		} else if (event.getSource().equals(instance.menuItem_About)){
 			JOptionPane.showMessageDialog(null, "CanarySyntaxChecker v:1.1 \n\nAuthor: WWOL (Brian McCarthy) \n");
 		} else if (event.getSource().equals(instance.menuItem_Change)){
-			JOptionPane.showMessageDialog(null, "Changelog:\n1.1 - \nText area editing, \nReading with no text check, \nHelp, About and Change Log menu items, \nFixed spelling, \n\n1.0 - \nInitial release,");
+			JOptionPane.showMessageDialog(null, "Changelog:\n1.2 - \nFixing bugs, \nReading allready read results, \nAdding a line to results,\n1.1 - \nText area editing, \nReading with no text check, \nHelp, About and Change Log menu items, \nFixed spelling, \n\n1.0 - \nInitial release,");
 		}
 	}// end actionPerformed
 }// end CanarySyntaxCheckerListener

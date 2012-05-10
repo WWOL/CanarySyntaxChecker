@@ -70,11 +70,11 @@ public class DataGroup {
 	public String getIP(){
 		return IP;
 	}
-	
+
 	public void setGroup(String paramGroup){
 		group = paramGroup;
 	}
-	
+
 	public String getGroup(){
 		return group;
 	}

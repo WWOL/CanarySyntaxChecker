@@ -4,11 +4,11 @@
 
 public class GroupAnalyser extends Analyser{
 	DataGroup currDataGroup = null;
-	
+
 	public GroupAnalyser(String paramText){
 		setText(paramText);
 	}
-	
+
 	public void startAnalysing() {
 		String[] stringArray = getText().split("\n");
 		for (String line : stringArray){
@@ -38,7 +38,7 @@ public class GroupAnalyser extends Analyser{
 		setMinSplit(2);
 		setMaxSplit(5);
 	}
-	
+
 	public String[] fixNullWithDefault(String[] paramStringArray){
 		String[] toRet = new String[6];
 		if (paramStringArray.length < 1) {
@@ -47,28 +47,28 @@ public class GroupAnalyser extends Analyser{
 		} else {
 			toRet[0] = paramStringArray[0];
 		}
-		
+
 		if (paramStringArray.length < 2) {
 			toRet[1] = "No Prefix!";
 			currDataGroup.setValidity(Validity.INFO);
 		} else {
 			toRet[1] = paramStringArray[1];
 		}
-		
+
 		if (paramStringArray.length < 3) {
 			toRet[2] = "No Commands!";
 			currDataGroup.setValidity(Validity.INFO);
 		} else {
 			toRet[2] = paramStringArray[2];
 		}
-		
+
 		if (paramStringArray.length < 4) {
 			toRet[3] = "No Inheritance!";
 			currDataGroup.setValidity(Validity.WARNING);
 		} else {
 			toRet[3] = paramStringArray[3];
 		}
-		
+
 		if (paramStringArray.length < 5) {
 			toRet[4] = "No Admin Flag!";
 			currDataGroup.setValidity(Validity.INFO);
