@@ -101,7 +101,7 @@ public class CanarySyntaxCheckerListener implements ActionListener{
 		} else if (event.getSource().equals(instance.menuItem_Help)){
 			JOptionPane.showMessageDialog(null, "Enter text directly in the text area. \nAfter a read you must click Text - Clear Text to be able to edit the text box again.");
 		} else if (event.getSource().equals(instance.menuItem_About)){
-			JOptionPane.showMessageDialog(null, "CanarySyntaxChecker v:1.1 \n\nAuthor: WWOL (Brian McCarthy) \n");
+			JOptionPane.showMessageDialog(null, "CanarySyntaxChecker v:1.2 \n\nAuthor: WWOL (Brian McCarthy) \n");
 		} else if (event.getSource().equals(instance.menuItem_Change)){
 			JOptionPane.showMessageDialog(null, "Changelog:\n1.2 - \nFixing bugs, \nReading allready read results, \nAdding a line to results,\n1.1 - \nText area editing, \nReading with no text check, \nHelp, About and Change Log menu items, \nFixed spelling, \n\n1.0 - \nInitial release,");
 		}
