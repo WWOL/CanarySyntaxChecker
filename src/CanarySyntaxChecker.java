@@ -68,6 +68,8 @@ public class CanarySyntaxChecker {
 		frame.add(scrollPane);
 		frame.setSize(600, 400);
 		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
 	}// end createGUI
 
 	public static void main(String[] args){

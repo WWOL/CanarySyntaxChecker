@@ -33,7 +33,7 @@ public class CanarySyntaxCheckerListener implements ActionListener{
 				currText = JOptionPane.showInputDialog(null, "Enter text:");
 				instance.textArea.append(currText + "\n");
 			} else {
-				JOptionPane.showMessageDialog(null, "You can't add a line to read results! Click Text - Clear Text to start adding text again.");
+				JOptionPane.showMessageDialog(null, "You may not add a line to read results! Click Text - Clear Text to start adding text again.");
 			}
 
 		} else if (event.getSource().equals(instance.menuItem_Clear)){
@@ -74,7 +74,7 @@ public class CanarySyntaxCheckerListener implements ActionListener{
 				return;
 			}
 			if (instance.textArea.getText().trim().equalsIgnoreCase("")){
-				instance.textArea.setText("Please enter data!");
+				instance.textArea.setText("Please enter data!\n");
 				return;
 			}
 			UserAnalyser analyser = new UserAnalyser(instance.textArea.getText());
@@ -101,9 +101,9 @@ public class CanarySyntaxCheckerListener implements ActionListener{
 		} else if (event.getSource().equals(instance.menuItem_Help)){
 			JOptionPane.showMessageDialog(null, "Enter text directly in the text area. \nAfter a read you must click Text - Clear Text to be able to edit the text box again.");
 		} else if (event.getSource().equals(instance.menuItem_About)){
-			JOptionPane.showMessageDialog(null, "CanarySyntaxChecker v:1.2 \n\nAuthor: WWOL (Brian McCarthy) \n");
+			JOptionPane.showMessageDialog(null, "CanarySyntaxChecker v:1.3 \n\nAuthor: WWOL (Brian McCarthy) \n\nThanks: \nThanks to Scoin0 for ver:1.3 fixes.");
 		} else if (event.getSource().equals(instance.menuItem_Change)){
-			JOptionPane.showMessageDialog(null, "Changelog:\n1.2 - \nFixing bugs, \nReading allready read results, \nAdding a line to results,\n1.1 - \nText area editing, \nReading with no text check, \nHelp, About and Change Log menu items, \nFixed spelling, \n\n1.0 - \nInitial release,");
+			JOptionPane.showMessageDialog(null, "Changelog:\n1.3 - \nFixed closing and centered frame. Thanks Scoin0.\n\n1.2 - \nFixing bugs, \nReading already read results, \nAdding a line to results,\n\n1.1 - \nText area editing, \nReading with no text check, \nHelp, About and Change Log menu items, \nFixed spelling, \n\n1.0 - \nInitial release,");
 		}
 	}// end actionPerformed
 }// end CanarySyntaxCheckerListener
